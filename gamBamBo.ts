@@ -1,7 +1,4 @@
 // 1. 이름 만들기
-let count = 0;
-let winCount = 0;
-let loseCount = 0;
 
 function gamBamBo(na: string, you: string) {
   // 2. 규칙 만들기 ( 작업중, 구상중이라 쓰기 )
@@ -19,36 +16,36 @@ function gamBamBo(na: string, you: string) {
 
   // you가 이기면 false, 지면 true
   if ((na === a || na === b || na === c) && (you === a || you === b || you === c)) {
-    count++;
     if (na === you) {
-      return count+'번째 경기의 결과는 무승부 입니다. 현재 스코어는'+winCount+':'+loseCount
+      console.log(count + '번째 경기의 결과는 무승부 입니다. 현재 스코어는' + winCount + ':' + loseCount)
     }
     else if (na !== you) {
       if (na === a) {
         if (you === b) {
           loseCount++;
-          return count+'번째 경기의 결과는 내가 졌습니다. 현재 스코어는'+winCount+':'+loseCount
+          console.log(count + '번째 경기의 결과는 내가 졌습니다. 현재 스코어는' + winCount + ':' + loseCount)
         } else if (you === c) {
           winCount++;
-          return count+'번째 경기의 결과는 내가 이겼습니다. 현재 스코어는'+winCount+':'+loseCount
+          console.log(count + '번째 경기의 결과는 내가 이겼습니다. 현재 스코어는' + winCount + ':' + loseCount)
         }
       } else if (na === b) {
         if (you === a) {
           winCount++;
-          return count+'번째 경기의 결과는 내가 이겼습니다. 현재 스코어는'+winCount+':'+loseCount
+          console.log(count + '번째 경기의 결과는 내가 이겼습니다. 현재 스코어는' + winCount + ':' + loseCount)
         } else if (you === c) {
           loseCount++;
-          return count+'번째 경기의 결과는 내가 졌습니다. 현재 스코어는'+winCount+':'+loseCount
+          console.log(count + '번째 경기의 결과는 내가 졌습니다. 현재 스코어는' + winCount + ':' + loseCount)
         }
       } else if (na === c) {
         if (you === a) {
           loseCount++;
-          return count+'번째 경기의 결과는 내가 졌습니다. 현재 스코어는'+winCount+':'+loseCount
+          console.log(count + '번째 경기의 결과는 내가 졌습니다. 현재 스코어는' + winCount + ':' + loseCount)
         } else if (you === b) {
           winCount++;
-          return count+'번째 경기의 결과는 내가 이겼습니다. 현재 스코어는'+winCount+':'+loseCount
+          console.log(count + '번째 경기의 결과는 내가 이겼습니다. 현재 스코어는' + winCount + ':' + loseCount)
         }
       }
+      return count
     }
   } else {
     return '가위바위보가 뭔지 모르시나봅니다. 이번 판은 횟수를 측정하지 않습니다.'
@@ -78,3 +75,8 @@ let you = rules[Math.floor(Math.random() * rules.length)]
 
 console.log(me, you)
 console.log(gamBamBo(me, you))
+
+
+let count = 0;
+let winCount = 0;
+let loseCount = 0;
