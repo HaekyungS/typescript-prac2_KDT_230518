@@ -14,7 +14,7 @@ function gamBamBo(na: string, you: string) {
   // 보
 
   // you가 이기면 false, 지면 true
-  if ((na === a || b || c) && (you === a || b || c)) {
+  if ((na === a || na===b || na===c) && (you === a || you===b || you===c)) {
     if (na === you) {
       return '비김비김'
     }
@@ -48,4 +48,23 @@ function gamBamBo(na: string, you: string) {
 
 let rules = ['가위', '바위', '보']
 
-console.log(gamBamBo(rules[1], rules[2]))
+function gamBamBoResult(result:any){
+  if(result===true){
+    return '내가 이겼다!'
+  }else if(result===false){
+    return '니가 이겼넹..'
+  }else{
+    return result
+  }
+}
+// 타입을 any 로 해서 작동은 하는데 음
+// console.log(gamBamBoResult(gamBamBo('가', rules[2])))
+
+
+// 랜덤함수로 가위바위보 중 하나 뱉어내기
+
+let me = rules[Math.floor(Math.random()*rules.length)]
+let you = rules[Math.floor(Math.random()*rules.length)]
+
+console.log(me, you)
+console.log(gamBamBo(me, you))
